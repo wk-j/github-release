@@ -1,5 +1,6 @@
 ## Commands
 
 ```bash
-parcel src/Index.ts
+npm run build
+npm link  # for the win
 ```

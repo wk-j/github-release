@@ -1,6 +1,6 @@
 import { defaultOptions, parseCommandLineOptions } from "../src/index"
 
-const options = { ...defaultOptions, token: "1234", targetCommitish: "master" }
+const options = { ...defaultOptions, token: "1234", targetCommitish: "master", assets: new Array<string>() }
 const args = [
     "--owner", "wk-j",
     "--repo", "temporary",

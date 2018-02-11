@@ -16,7 +16,14 @@ export type ReleaseOptions = {
     targetCommitish: string
     draft: boolean
     prerelease: boolean
+    token: string,
+    assets: string[]
+}
+
+type ReleaseAssetOptions = {
+    asset: string
     token: string
+    uploadUrl: string
 }
 
 export type CreateReleaseResponse = {
@@ -31,7 +38,7 @@ export type UploadAssetResponse = {
     content_type: string
 }
 
-export async function uploadReleaseAsset(info: { asset: string, token: string, uploadUrl: string }) {
+export async function uploadReleaseAsset(info: ReleaseAssetOptions) {
     const cleanUrl = info.uploadUrl.replace("{?name,label}", "");
     const state = fs.statSync(info.asset)
     const fileName = path.basename(info.asset)

@@ -2,25 +2,24 @@
   "name": "github-release",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/github-release.ts",
+  "bin": "dist/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-x": "parcel build src/index.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/form-data": "^2.2.1",
     "@types/mime": "^2.0.0",
-    "@types/node": "^9.4.4",
-    "async": "^2.6.0",
+    "@types/node": "^9.4.4"
+  },
+  "dependencies": {
     "axios": "^0.17.1",
     "events": "^2.0.0",
     "form-data": "^2.3.1",
     "mime": "^2.2.0",
-    "path": "^0.12.7",
-    "progress-stream": "^2.0.0",
-    "request": "^2.83.0",
-    "typescript": "^2.7.1",
-    "util": "^0.10.3"
+    "typescript": "^2.7.1"
   }
 }

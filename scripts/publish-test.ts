@@ -12,6 +12,7 @@ async function request() {
         targetCommitish: "master",
         draft: false,
         prerelease: false,
+        assets: [],
         token
     }
     const release = await createRelease(options)

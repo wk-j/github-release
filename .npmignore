@@ -1,0 +1,8 @@
+scripts
+src
+.vscode
+.cache
+.git
+CMD.md
+tsconfig.json
+tslint.json

@@ -1,9 +1,9 @@
-import { createRelease, Options, uploadReleaseAsset } from "../src/github-release"
+import { createRelease, ReleaseOptions, uploadReleaseAsset } from "../src/github-release"
 
 const token = process.env.GITHUB_TOKEN
 
 async function request() {
-    const options: Options = {
+    const options: ReleaseOptions = {
         name: "Hello",
         owner: "wk-j",
         repo: "temporary",

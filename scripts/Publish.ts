@@ -1,26 +1,30 @@
-import { createRelease, Options } from "../src/GitHub"
-var token = process.env.GITHUB_TOKEN
+import { createRelease, Options, uploadReleaseAsset } from "../src/github-release"
 
+const token = process.env.GITHUB_TOKEN
 
 async function request() {
-    var options: Options = {
+    const options: Options = {
         name: "Hello",
         owner: "wk-j",
-        repo: "github-release",
-        tag: "v0.1.0",
+        repo: "temporary",
+        tag: "v0.5.0",
         body: ":tada: First release",
         targetCommitish: "master",
         draft: false,
         prerelease: false,
-        token: token
+        token
     }
-
-    var result = await createRelease(options)
-    console.log(result);
+    const release = await createRelease(options)
+    const asset = await uploadReleaseAsset({
+        asset: "README.md",
+        uploadUrl: release.data.upload_url,
+        token
+    })
+    return { release, asset }
 }
 
 request().then(rs => {
-    console.log(rs);
+    console.log(rs.asset)
 }).catch(err => {
     console.error(err);
-}); 
+})

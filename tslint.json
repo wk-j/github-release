@@ -9,6 +9,9 @@
         "object-literal-sort-keys": false,
         "trailing-comma": false,
         "interface-over-type-literal": false,
+        "arrow-parens": false,
+        "no-console": false,
+        "eofline": false
     },
     "rulesDirectory": []
 }
